@@ -1,0 +1,42 @@
+---
+
+type Project = {
+    title: string;
+    description: string;
+    link: string;
+};
+
+const projects: Project[] = [
+    {
+        title: "Blog Personal",
+        description: "Descripción breve del proyecto 1.",
+        link: "#"
+    },
+    {
+        title: "Plataforma de tutorías universitarias",
+        description: "Descripción breve del proyecto 2.",
+        link: "#"
+    },
+    
+];
+---
+
+<section class="min-h-screen bg-white dark:bg-neutral-900 flex flex-col items-center justify-center px-4 py-12">
+    <header class="mb-8 text-center">
+        <h1 class="text-3xl md:text-4xl font-semibold text-neutral-900 dark:text-white mb-2 tracking-tight">Kevin Chavarin</h1>
+        <p class="text-neutral-500 dark:text-neutral-400 text-base">Desarrollador Fullstack | React</p>
+    </header>
+    <div class="grid gap-6 md:grid-cols-2 max-w-2xl w-full">
+        {projects.map((project) => (
+            <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group block p-5 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700"
+            >
+                <h2 class="text-xl font-medium text-neutral-900 dark:text-white mb-1 group-hover:underline">{project.title}</h2>
+                <p class="text-neutral-600 dark:text-neutral-300 text-sm">{project.description}</p>
+            </a>
+        ))}
+    </div>
+</section>
