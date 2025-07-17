@@ -1,42 +1,120 @@
 ---
-
 type Project = {
-    title: string;
-    description: string;
-    link: string;
+  title: string;
+  description: string;
+  link?: string;
+  technologies: string[];
+  github?: string;
 };
 
 const projects: Project[] = [
-    {
-        title: "Blog Personal",
-        description: "Descripción breve del proyecto 1.",
-        link: "#"
-    },
-    {
-        title: "Plataforma de tutorías universitarias",
-        description: "Descripción breve del proyecto 2.",
-        link: "#"
-    },
-    
+  {
+    title: "Personal blog",
+    description:
+      "Here you can find articles about web development, programming, new technologies, gaming, anime and more about me.",
+    link: "https://facebook.com",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Storybook"],
+    github: "https://github.com/KevinChavarin/personal-blog",
+  },
+  {
+    title: "Tutoring platform",
+    description: "Descripción breve del proyecto 2.",
+    technologies: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
+    github: "https://github.com/KevinChavarin/proyecto-asesoria",
+  },
+  {
+    title: "Access control web app",
+    description: "Descripción breve del proyecto 2.",
+    technologies: ["React", "ExpressJS", "Carbon Design System"],
+  },
 ];
 ---
 
-<section class="min-h-screen bg-white dark:bg-neutral-900 flex flex-col items-center justify-center px-4 py-12">
-    <header class="mb-8 text-center">
-        <h1 class="text-3xl md:text-4xl font-semibold text-neutral-900 dark:text-white mb-2 tracking-tight">Kevin Chavarin</h1>
-        <p class="text-neutral-500 dark:text-neutral-400 text-base">Desarrollador Fullstack | React</p>
-    </header>
-    <div class="grid gap-6 md:grid-cols-2 max-w-2xl w-full">
-        {projects.map((project) => (
-            <a
-                href={project.link}
+<section
+  class="min-h-screen bg-white dark:bg-neutral-900 flex flex-col items-center justify-center px-4 py-12"
+>
+  <header class="mb-2 text-center">
+    <h1
+      class="text-3xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-2 tracking-tight"
+    >
+      Kevin Chavarin
+    </h1>
+  </header>
+  <div class="md:grid-cols-2 max-w-2xl w-full mb-8">
+    <p class="text-neutral-500 dark:text-neutral-300 text-base">
+      Fullstack Developer with a stronf focus on Frontend development with
+      passion for creating dynamic and responsive web applications. I specialize
+      in React and have experience in both frontend and backend development,
+      allowing me to build complete solutions from the ground up.
+    </p>
+  </div>
+  <div class="grid gap-6 md:grid-cols-2 max-w-2xl w-full">
+    {
+      projects.map((project) => (
+        <div class="group block p-5 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700">
+          <h2 class="text-xl font-medium text-neutral-900 dark:text-white mb-1 group-hover:underline flex items-center">
+            {project.link ? (
+              <>
+                <a
+                  href={project.link}
+                  class="hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.title}
+                </a>
+                <span class="ml-2 w-2 h-2 rounded-full bg-green-500 inline-block mx-1 animate-breathing"></span>
+              </>
+            ) : (
+              project.title
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                class="inline-block ml-2 align-middle"
+                aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group block p-5 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700"
-            >
-                <h2 class="text-xl font-medium text-neutral-900 dark:text-white mb-1 group-hover:underline">{project.title}</h2>
-                <p class="text-neutral-600 dark:text-neutral-300 text-sm">{project.description}</p>
-            </a>
-        ))}
-    </div>
+              >
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 0 15.00 15.00"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hover:scale-110 transition-transform duration-300"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <g id="SVGRepo_iconCarrier">
+                    {" "}
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7.49936 0.850006C3.82767 0.850006 0.849976 3.8273 0.849976 7.50023C0.849976 10.4379 2.75523 12.9306 5.39775 13.8104C5.73047 13.8712 5.85171 13.6658 5.85171 13.4895C5.85171 13.3315 5.846 12.9135 5.84273 12.3587C3.99301 12.7604 3.60273 11.4671 3.60273 11.4671C3.30022 10.6988 2.86423 10.4942 2.86423 10.4942C2.26044 10.0819 2.90995 10.0901 2.90995 10.0901C3.57742 10.137 3.9285 10.7755 3.9285 10.7755C4.52167 11.7916 5.48512 11.4981 5.86396 11.3279C5.92438 10.8984 6.09625 10.6053 6.28608 10.4391C4.80948 10.2709 3.25695 9.70063 3.25695 7.15241C3.25695 6.42615 3.51618 5.83298 3.94157 5.368C3.87299 5.1998 3.64478 4.52375 4.00689 3.60807C4.00689 3.60807 4.56494 3.42926 5.83538 4.28941C6.36568 4.14204 6.93477 4.06856 7.50018 4.0657C8.06518 4.06856 8.63386 4.14204 9.16498 4.28941C10.4346 3.42926 10.9918 3.60807 10.9918 3.60807C11.3548 4.52375 11.1266 5.1998 11.0584 5.368C11.4846 5.83298 11.7418 6.42615 11.7418 7.15241C11.7418 9.70716 10.1868 10.2693 8.70571 10.4338C8.94412 10.6392 9.15681 11.045 9.15681 11.6655C9.15681 12.5542 9.14865 13.2715 9.14865 13.4895C9.14865 13.6675 9.26867 13.8745 9.60588 13.8095C12.2464 12.9282 14.15 10.4375 14.15 7.50023C14.15 3.8273 11.1723 0.850006 7.49936 0.850006Z"
+                      fill="#ffffff"
+                    />{" "}
+                  </g>
+                </svg>
+              </a>
+            )}
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-300 text-sm">
+            {project.description}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {project.technologies.map((tech) => (
+              <span class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200 hover:bg-gray-500 dark:hover:bg-light-600">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </section>
