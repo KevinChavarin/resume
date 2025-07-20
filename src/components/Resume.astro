@@ -1,4 +1,7 @@
 ---
+import SocialLinks from "./SocialLinks.astro";
+import AboutMe from "./AboutMe.astro";
+
 type Project = {
   title: string;
   description: string;
@@ -13,18 +16,18 @@ const projects: Project[] = [
     description:
       "Here you can find articles about web development, programming, new technologies, gaming, anime and more about me.",
     link: "https://facebook.com",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Storybook"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Storybook", "SEO Optimized"],
     github: "https://github.com/KevinChavarin/personal-blog",
   },
   {
     title: "Tutoring platform",
-    description: "Descripción breve del proyecto 2.",
+    description: "This project is a tutoring platform where students can find tutors for various subjects, contact them, schedule sessions and manage their learning progress.",
     technologies: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
     github: "https://github.com/KevinChavarin/proyecto-asesoria",
   },
   {
     title: "Access control web app",
-    description: "Descripción breve del proyecto 2.",
+    description: "Web application for managing access control in a company, allowing administrators to manage employee access levels and monitor their activities as well as generate reports, analytics and more.",
     technologies: ["React", "ExpressJS", "Carbon Design System"],
   },
 ];
@@ -40,14 +43,17 @@ const projects: Project[] = [
       Kevin Chavarin
     </h1>
   </header>
+  <SocialLinks />
   <div class="md:grid-cols-2 max-w-2xl w-full mb-8">
     <p class="text-neutral-500 dark:text-neutral-300 text-base">
-      Fullstack Developer with a stronf focus on Frontend development with
-      passion for creating dynamic and responsive web applications. I specialize
-      in React and have experience in both frontend and backend development,
-      allowing me to build complete solutions from the ground up.
+      Fullstack developer with a passion for creating innovative and efficient web applications. I specialize in building scalable and maintainable software solutions using modern technologies and best practices.
     </p>
   </div>
+  <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">About Me!</h2>
+  <AboutMe />
+  <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">Experience</h2>
+  
+  <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">Projects</h2>
   <div class="grid gap-6 md:grid-cols-2 max-w-2xl w-full">
     {
       projects.map((project) => (
@@ -103,7 +109,7 @@ const projects: Project[] = [
               </a>
             )}
           </h2>
-          <p class="text-neutral-600 dark:text-neutral-300 text-sm">
+          <p class="text-neutral-600 dark:text-neutral-300 text-sm mb-3">
             {project.description}
           </p>
           <div class="flex flex-wrap gap-2">
