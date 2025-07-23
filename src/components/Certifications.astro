@@ -1,0 +1,129 @@
+---
+type Certification = {
+  title: string;
+  issuer: string;
+  date: string;
+  link?: string;
+};
+
+const certifications: Certification[] = [
+  {
+    title: "Introduction to Front-end Development",
+    issuer: "Coursera",
+    date: "2022",
+    link: "https://www.coursera.org/account/accomplishments/verify/YRTVCTH84TN8",
+  },
+  {
+    title: "Introduction to Mobile Development",
+    issuer: "Coursera",
+    date: "2022",
+    link: "https://www.coursera.org/account/accomplishments/verify/JBPAZSNELNBA",
+  },
+  {
+    title: "Programming with JavaScript",
+    issuer: "Coursera",
+    date: "2022",
+    link: "https://www.coursera.org/account/accomplishments/verify/7JFMW2MAN3LQ",
+  },
+  {
+    title: "Version Control",
+    issuer: "Coursera",
+    date: "2022",
+    link: "https://www.coursera.org/account/accomplishments/verify/EBYW4B3HRE3M",
+  },
+  {
+    title: "DevOps - Las artes Marciales del Software",
+    issuer: "Udemy",
+    date: "2022",
+    link: "https://drive.google.com/file/d/1rlrcCc9cTDM-4o707YlYkQB6d52lizhq/view?usp=drive_link",
+  },
+  {
+    title: "Introduction to Back-end Development",
+    issuer: "Coursera",
+    date: "2022",
+    link: "https://www.coursera.org/account/accomplishments/verify/JQ7XMSP8X2B7",
+  },
+  {
+    title: "UML and Object-Oriented Design Foundations",
+    issuer: "Udemy",
+    date: "2022",
+    link: "https://drive.google.com/file/d/1jRGuwtv17LNvvkwtnuYik_4ec90QT0Xc/view?usp=drive_link",
+  },
+  {
+    title: "HTML and CSS in depth",
+    issuer: "Coursera",
+    date: "2023",
+    link: "https://www.coursera.org/account/accomplishments/verify/RDU7V6Q765Q4",
+  },
+  {
+    title: "React Basics",
+    issuer: "Coursera",
+    date: "2023",
+    link: "https://www.coursera.org/account/accomplishments/verify/TS2XVGNEJNW6",
+  },
+  {
+    title: "Understanding the NPM - Node.JS package Manager",
+    issuer: "Udemy",
+    date: "2023",
+    link: "https://drive.google.com/file/d/11Y5J4WbSiRb7mSWRh0G5MS2Pg06Vd-We/view?usp=sharing",
+  },
+  {
+    title: "JavaScript - The Complete Guide 2023",
+    issuer: "Udemy",
+    date: "2023",
+    link: "https://drive.google.com/file/d/1B9h0J2Oqs4GPjRzUBjdszmZAkBJkSMXe/view?usp=drive_link",
+  },
+  {
+    title: "Advanced CSS and Sass",
+    issuer: "Udemy",
+    date: "2023",
+    link: "https://drive.google.com/file/d/1bCmj-ckNeBG6bdlTUReT4CzFlFmMF8fJ/view?usp=drive_link",
+  },
+  {
+    title: "React: De cero a experto (Hooks y MERN)",
+    issuer: "Udemy",
+    date: "2023",
+    link: "https://drive.google.com/file/d/1fUWwF0jq2fmv_2OlbJQlu2qrUatok9A5/view?usp=drive_link",
+  },
+  {
+    title: "Understanding TypeScript",
+    issuer: "Udemy",
+    date: "2023",
+    link: "https://drive.google.com/file/d/1xooKnxPSO2mQpKgz9po5Yu9SkRuGlV0l/view?usp=drive_link",
+  },
+  {
+    title: "Advanced React",
+    issuer: "Coursera",
+    date: "2025",
+    link: "https://www.coursera.org/account/accomplishments/verify/JRWL92SY1YVM",
+  },
+];
+---
+
+<section class="grid gap-6 md:grid-cols-3 max-w-2xl w-full mb-8">
+  {
+    certifications.map((certification) => (
+      <div class="group block p-5 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700">
+        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">
+          {certification.title}
+        </h3>
+        <p class="text-base text-neutral-500 dark:text-neutral-300">
+          {certification.issuer}
+        </p>
+        <p class="text-sm text-neutral-400 dark:text-neutral-500">
+          {certification.date}
+        </p>
+        {certification.link && (
+          <a
+            href={certification.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-2 px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 rounded-3xl dark:text-blue-300 hover:bg-blue-200 hover:text-blue-700 transition-colors"
+          >
+            View Certificate
+          </a>
+        )}
+      </div>
+    ))
+  }
+</section>
