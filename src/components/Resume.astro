@@ -1,6 +1,8 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
 import AboutMe from "./AboutMe.astro";
+import Experience from "./Experience.astro";
+import Certifications from "./Certifications.astro";
 
 type Project = {
   title: string;
@@ -33,7 +35,7 @@ const projects: Project[] = [
 ];
 ---
 
-<section
+<main
   class="min-h-screen bg-white dark:bg-neutral-900 flex flex-col items-center justify-center px-4 py-12"
 >
   <header class="mb-2 text-center">
@@ -49,12 +51,27 @@ const projects: Project[] = [
       Fullstack developer with a passion for creating innovative and efficient web applications. I specialize in building scalable and maintainable software solutions using modern technologies and best practices.
     </p>
   </div>
-  <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">About Me!</h2>
-  <AboutMe />
-  <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">Experience</h2>
+  <section>
+    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">About Me</h2>
+    <AboutMe />
+  </section>
+  <section>
+    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">Experience</h2>
+    <Experience />
+  </section>
+  <section class="grid gap-1 md:grid-cols-1 max-w-2xl w-full mb-8">
+    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white">Education</h2>
+    <div class="flex items-center">
+      <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Universidad de Guadalajara</h3>
+      <h3 class="text-neutral-500 dark:text-neutral-300 text-base ml-auto">January 2020 - June 2025</h3>
+    </div>
+    <p class="text-neutral-500 dark:text-neutral-300 text-base">
+      Bachelor of Information Technology
+    </p>
+  </section>
   
   <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">Projects</h2>
-  <div class="grid gap-6 md:grid-cols-2 max-w-2xl w-full">
+  <section class="grid gap-6 md:grid-cols-2 max-w-2xl w-full mb-8">
     {
       projects.map((project) => (
         <div class="group block p-5 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700">
@@ -81,6 +98,7 @@ const projects: Project[] = [
                 aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Open Github repository"
               >
                 <svg
                   width="24px"
@@ -122,5 +140,9 @@ const projects: Project[] = [
         </div>
       ))
     }
-  </div>
-</section>
+  </section>
+  <section class="grid gap-1 md:grid-cols-1 max-w-2xl w-full mb-8">
+    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-2">Certifications</h2>
+    <Certifications />
+  </section>
+</main>
