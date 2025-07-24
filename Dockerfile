@@ -2,8 +2,8 @@
 # https://hub.docker.com/_/node
 FROM node:lts-alpine
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm and serve globally
+RUN npm install -g pnpm serve
 
 # Create and change to the app directory.
 WORKDIR /app
@@ -20,8 +20,8 @@ COPY . ./
 # Build the app.
 RUN pnpm run build
 
-# Expose port (Railway usa el puerto que definas en PORT env var, por defecto 3000)
-EXPOSE 4321
+# Expose port
+EXPOSE $PORT
 
-# Serve the app
-CMD ["pnpm", "run", "start"]
+# Serve the static files with serve
+CMD serve -s dist -l $PORT
