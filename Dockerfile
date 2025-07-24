@@ -11,7 +11,7 @@ WORKDIR /app
 # Copy package files first for better caching
 COPY package.json pnpm-lock.yaml ./
 
-# Install packages
+# Install ALL dependencies (including dev)
 RUN pnpm install --frozen-lockfile
 
 # Copy local code to the container image.
@@ -19,7 +19,7 @@ COPY . ./
 
 # Clear any existing build and rebuild
 RUN rm -rf dist
-RUN pnpm run build
+RUN NODE_ENV=production pnpm run build
 
 # Verify the build worked
 RUN ls -la dist/
