@@ -8,7 +8,7 @@ RUN npm install -g pnpm serve
 # Create and change to the app directory.
 WORKDIR /app
 
-# Copy package files
+# Copy package files first for better caching
 COPY package.json pnpm-lock.yaml ./
 
 # Install packages
@@ -17,8 +17,12 @@ RUN pnpm install --frozen-lockfile
 # Copy local code to the container image.
 COPY . ./
 
-# Build the app.
+# Clear any existing build and rebuild
+RUN rm -rf dist
 RUN pnpm run build
+
+# Verify the build worked
+RUN ls -la dist/
 
 # Expose port
 EXPOSE $PORT
