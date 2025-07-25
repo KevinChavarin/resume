@@ -83,36 +83,47 @@ const projects: Project[] = [
     </h2>
     <Experience />
   </section>
-  <section class="grid gap-2 md:grid-cols-1 max-w-2xl w-full mb-8">
-    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white">
+  <section class="max-w-2xl w-full mb-8">
+    <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-4">
       <Translate
         textKey="education.label"
         fallback="education.label"
         client:load>
     </h2>
-    <div class="flex items-center">
-      <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">
+    <div class="space-y-3">
+      <div class="flex items-center">
+        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">
+          <Translate
+            textKey="education.degree"
+            fallback="Bachelor's degree in Information Technologies"
+            client:load
+          />
+        </h3>
+        <h3 class="text-neutral-500 dark:text-neutral-300 text-base ml-auto">
+          <Translate
+            textKey="education.duration"
+            fallback="January 2020 - June 2025"
+            client:load
+          />
+        </h3>
+      </div>
+      <p class="text-neutral-500 dark:text-neutral-300 text-base">
         <Translate
-          textKey="education.degree"
-          fallback="Bachelor's degree in Information Technologies"
+          textKey="education.institution"
+          fallback="University of Guadalajara"
           client:load
         />
-      </h3>
-      <h3 class="text-neutral-500 dark:text-neutral-300 text-base ml-auto">
-        <Translate
-          textKey="education.duration"
-          fallback="January 2020 - June 2025"
-          client:load
-        />
-      </h3>
+      </p>
+      <div>
+        <span class="inline-block px-2 py-1 text-sm rounded bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200 hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors mt-2">
+          <Translate
+            textKey="education.specialization"
+            fallback="Cybersecurity specialization"
+            client:load
+          />
+        </span>
+      </div>
     </div>
-    <p class="text-neutral-500 dark:text-neutral-300 text-base">
-      <Translate
-        textKey="education.institution"
-        fallback="University of Guadalajara"
-        client:load
-      />
-    </p>
   </section>
 
   <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">
