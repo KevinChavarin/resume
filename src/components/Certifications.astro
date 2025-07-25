@@ -1,4 +1,6 @@
 ---
+import Translate from "./Translate";
+
 type Certification = {
   title: string;
   issuer: string;
@@ -120,7 +122,11 @@ const certifications: Certification[] = [
             rel="noopener noreferrer"
             class="inline-block mt-2 px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 rounded-3xl dark:text-blue-300 hover:bg-blue-200 hover:text-blue-700 transition-colors"
           >
-            View Certificate
+            <Translate
+              textKey="viewCertificate"
+              fallback="View Certificate"
+              client:load
+            />
           </a>
         )}
       </div>

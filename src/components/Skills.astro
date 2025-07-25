@@ -1,4 +1,6 @@
 ---
+import Translate from "./Translate";
+
 type Skills = {
   skills: string[];
 };
@@ -22,16 +24,15 @@ const skills: Skills = {
 };
 
 const softSkills = [
-  "Problem-solving",
-  "Teamwork",
-  "Adaptability",
-  "Time management",
-  "Critical thinking",
-  "Creativity",
-  "Communication",
-  "Meta-communication",
-  "Growth mindset",
-  "Attention to detail",
+  "softSkills.problemSolving",
+  "softSkills.teamwork",
+  "softSkills.adaptability",
+  "softSkills.timeManagement",
+  "softSkills.criticalThinking",
+  "softSkills.creativity",
+  "softSkills.metaCommunication",
+  "softSkills.growthMindset",
+  "softSkills.attentionToDetail",
 ];
 
 ---
@@ -43,13 +44,24 @@ const softSkills = [
       ))
     }
 </section>
-<div>
-    <h2 class="text-2xl mb-2">Soft Skills</h2>
+<div text-2xl mb-2>
+    <Translate
+      textKey="softSkills.label"
+      fallback="Soft Skills"
+      client:load
+    />
 </div>
 <section class="flex flex-wrap gap-2 max-w-4xl w-full mb-8 mt-2">
     {
         softSkills.map((skill) => (
-            <p class="flex px-2 py-1 text-sm rounded bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200 hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors">{skill}</p>
+          <p class="flex px-2 py-1 text-sm rounded bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200 hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors">
+            <Translate
+                textKey={skill}
+                fallback={skill.split('.').pop()}
+                client:load
+            /> 
+          </p>
+            
         ))
     }
 </section>

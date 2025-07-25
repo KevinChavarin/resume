@@ -18,9 +18,8 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Personal blog",
-    description:
-      "Here you can find articles about web development, programming, new technologies, gaming, anime and more about me.",
+    title: "projects.project1.title",
+    description: "projects.project1.description",
     link: "https://facebook.com",
     technologies: [
       "React",
@@ -32,16 +31,14 @@ const projects: Project[] = [
     github: "https://github.com/KevinChavarin/personal-blog",
   },
   {
-    title: "Tutoring platform",
-    description:
-      "This project is a tutoring platform where students can find tutors for various subjects, contact them, schedule sessions and manage their learning progress.",
+    title: "projects.project2.title",
+    description: "projects.project2.description",
     technologies: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
     github: "https://github.com/KevinChavarin/proyecto-asesoria",
   },
   {
-    title: "Access control web app",
-    description:
-      "Web application for managing access control in a company, allowing administrators to manage employee access levels and monitor their activities as well as generate reports, analytics and more.",
+    title: "projects.project3.title",
+    description: "projects.project3.description",
     technologies: ["React", "ExpressJS", "Carbon Design System"],
   },
 ];
@@ -86,25 +83,44 @@ const projects: Project[] = [
     </h2>
     <Experience />
   </section>
-  <section class="grid gap-1 md:grid-cols-1 max-w-2xl w-full mb-8">
+  <section class="grid gap-2 md:grid-cols-1 max-w-2xl w-full mb-8">
     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white">
-      Education
+      <Translate
+        textKey="education.label"
+        fallback="education.label"
+        client:load>
     </h2>
     <div class="flex items-center">
       <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">
-        Universidad de Guadalajara
+        <Translate
+          textKey="education.degree"
+          fallback="Bachelor's degree in Information Technologies"
+          client:load
+        />
       </h3>
       <h3 class="text-neutral-500 dark:text-neutral-300 text-base ml-auto">
-        January 2020 - June 2025
+        <Translate
+          textKey="education.duration"
+          fallback="January 2020 - June 2025"
+          client:load
+        />
       </h3>
     </div>
     <p class="text-neutral-500 dark:text-neutral-300 text-base">
-      Bachelor of Information Technology
+      <Translate
+        textKey="education.institution"
+        fallback="University of Guadalajara"
+        client:load
+      />
     </p>
   </section>
 
   <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">
-    Projects
+    <Translate
+      textKey="projects.label"
+      fallback="Projects"
+      client:load
+    />
   </h2>
   <section class="grid gap-6 md:grid-cols-2 max-w-2xl w-full mb-8">
     {
@@ -119,12 +135,20 @@ const projects: Project[] = [
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {project.title}
+                  <Translate
+                    textKey= {project.title}
+                    fallback= {project.title}
+                    client:load
+                  />
                 </a>
                 <span class="ml-2 w-2 h-2 rounded-full bg-green-500 inline-block mx-1 animate-breathing" />
               </>
             ) : (
-              project.title
+              <Translate
+                textKey= {project.title}
+                fallback= {project.title}
+                client:load
+              />
             )}
             {project.github && (
               <a
@@ -162,7 +186,11 @@ const projects: Project[] = [
             )}
           </h2>
           <p class="text-neutral-600 dark:text-neutral-300 text-sm mb-3">
-            {project.description}
+            <Translate
+              textKey= {project.description}
+              fallback= {project.description}
+              client:load
+            />
           </p>
           <div class="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
@@ -177,13 +205,20 @@ const projects: Project[] = [
   </section>
   <section class="grid gap-1 md:grid-cols-1 max-w-2xl w-full mb-8">
     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
-      Certifications
+      <Translate
+        textKey="certifications"
+        fallback="Certifications"
+        client:load>
     </h2>
     <Certifications />
   </section>
   <section class="grid gap-1 md:grid-cols-1 max-w-2xl w-full mb-8">
     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
-      Skills
+      <Translate
+        textKey="skills"
+        fallback="Skills"
+        client:load
+      />
       <Skills />
     </h2>
   </section>

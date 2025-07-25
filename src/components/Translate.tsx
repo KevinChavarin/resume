@@ -1,12 +1,21 @@
 import { useTranslation } from '../hooks/useTranslation';
 
-interface Props {
+interface TranslateProps {
   textKey: string;
   fallback?: string;
 }
 
-export default function TranslatableText({ textKey, fallback }: Props) {
+export default function Translate({ textKey, fallback = textKey }: TranslateProps) {
   const { t } = useTranslation();
-  
-  return <span>{t[textKey as keyof typeof t] || fallback || textKey}</span>;
+
+  // Función para obtener valor anidado usando dot notation
+  const getNestedValue = (obj: any, path: string): string => {
+    return path.split('.').reduce((current, key) => {
+      return current && current[key] !== undefined ? current[key] : null;
+    }, obj) || fallback;
+  };
+
+  const translatedText = getNestedValue(t, textKey);
+
+  return <>{translatedText}</>;
 }
