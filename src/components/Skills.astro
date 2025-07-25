@@ -1,0 +1,55 @@
+---
+type Skills = {
+  skills: string[];
+};
+
+const skills: Skills = {
+  skills: [
+    "JavaScript / TypeScript",
+    "React / Next.js",
+    "Node.js",
+    "Express.js",
+    "HTML",
+    "CSS / Tailwind CSS",
+    "Git / GitHub",
+    "Docker",
+    "MySQL",
+    "MongoDB",
+    "Astro",
+    "PHP",
+    "Railway",
+  ],
+};
+
+const softSkills = [
+  "Problem-solving",
+  "Teamwork",
+  "Adaptability",
+  "Time management",
+  "Critical thinking",
+  "Creativity",
+  "Communication",
+  "Meta-communication",
+  "Growth mindset",
+  "Attention to detail",
+];
+
+---
+
+<section class="flex flex-wrap gap-2 max-w-4xl w-full mb-8 mt-2">
+    {
+      skills.skills.map((skill) => (
+        <p class="flex-1 min-w-[calc(50%-0.25rem)] px-2 py-1 text-sm rounded bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200 hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors">{skill}</p>
+      ))
+    }
+</section>
+<div>
+    <h2 class="text-2xl mb-2">Soft Skills</h2>
+</div>
+<section class="flex flex-wrap gap-2 max-w-4xl w-full mb-8 mt-2">
+    {
+        softSkills.map((skill) => (
+            <p class="flex-1 min-w-[calc(50%-0.25rem)] px-2 py-1 text-sm rounded bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200 hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors">{skill}</p>
+        ))
+    }
+</section>

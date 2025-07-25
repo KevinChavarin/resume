@@ -6,6 +6,7 @@ import Certifications from "./Certifications.astro";
 import ThemeSwitcher from "./ThemeSwitcher.tsx";
 import LanguageSwitcher from "./LanguageSwitcher.tsx";
 import Translate from "./Translate.tsx";
+import Skills from "./Skills.astro";
 
 type Project = {
   title: string;
@@ -69,13 +70,19 @@ const projects: Project[] = [
 
   <section>
     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">
-      About Me
+      <Translate
+        textKey="aboutMe"
+        fallback="About Me"
+        client:load>
     </h2>
     <AboutMe />
   </section>
   <section>
     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-5">
-      Experience
+      <Translate
+        textKey="experience"
+        fallback="Experience"
+        client:load>
     </h2>
     <Experience />
   </section>
@@ -177,6 +184,7 @@ const projects: Project[] = [
   <section class="grid gap-1 md:grid-cols-1 max-w-2xl w-full mb-8">
     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
       Skills
+      <Skills />
     </h2>
   </section>
 </main>
