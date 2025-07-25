@@ -24,6 +24,7 @@ const translations = {
                 Tengo 3 años de experiencia en desarrollo con proyectos personales, escolares y de prácticas profesionales, enfocándome en crear interfaces accesibles, limpias y optimizadas para SEO con un fuerte enfoque en la optimización del rendimiento, lo cual es esencial para mantener una puntuación de alta calidad en sitios web.
                 Creo firmemente en la ingeniería de software sostenible, por lo que priorizo las prácticas de código limpio para optimizar los costos de infraestructura.`,
     experience: "Experiencia",
+    experiencePosition: "Posición",
     education: "Educación",
     projects: "Proyectos",
     certifications: "Certificaciones",
