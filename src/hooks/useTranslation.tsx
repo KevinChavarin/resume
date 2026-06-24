@@ -27,7 +27,7 @@ const translations = {
       label: "Projects",
       project1: {
         title: "Choiz",
-        description: "SaaS platform that connects users with local restaurants, allowing them to browse menus, read reviews and order food seamlessly. Features real-time order tracking and personalized recommendations.",
+        description: "SaaS platform that connects users with local restaurants, allowing them to browse menus, read reviews and order food seamlessly.",
       },
       project2: {
         title: "Personal Blog",
@@ -86,7 +86,7 @@ const translations = {
       label: "Proyectos",
       project1: {
         title: "Choiz",
-        description: "Plataforma SaaS que conecta usuarios con restaurantes locales, permitiendo explorar menús, leer reseñas y ordenar comida de forma sencilla. Incluye seguimiento de pedidos en tiempo real y recomendaciones personalizadas.",
+        description: "Plataforma SaaS que conecta usuarios con restaurantes locales, permitiendo explorar menús, leer reseñas y ordenar comida de forma sencilla.",
       },
       project2: {
         title: "Blog personal",
