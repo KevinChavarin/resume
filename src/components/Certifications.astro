@@ -105,13 +105,19 @@ const certifications: Certification[] = [
     date: "2025",
     link: "https://www.coursera.org/account/accomplishments/verify/QKYFVEE8LKM9",
   },
+  {
+    title: "Meta Front-End Developer Professional Certificate",
+    issuer: "Meta",
+    date: "2026",
+    link: "https://www.coursera.org/account/accomplishments/professional-cert/8XB6S9EOTHK9",
+  },
 ];
 ---
 
-<section class="grid gap-6 md:grid-cols-3 max-w-2xl w-full mb-8">
+<section class="grid gap-6 md:grid-cols-3 max-w-4xl w-full mb-8">
   {
-    certifications.map((certification) => (
-      <div class="group block p-5 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700">
+    certifications.sort((a, b) => b.date.localeCompare(a.date)).map((certification) => (
+      <div class="group block p-5 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-white/30 dark:border-white/10 transition-colors hover:bg-white/60 dark:hover:bg-white/10">
         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">
           {certification.title}
         </h3>

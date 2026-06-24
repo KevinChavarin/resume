@@ -13,6 +13,13 @@ type Experiences = {
 
 const experiences: Experiences[] = [
   {
+    company: "Cognizant",
+    type: "cognizantExperienceType",
+    position: "cognizantExperienceTitle",
+    startDate: "May 2026",
+    description: "cognizantDescription",
+  },
+  {
     company: "IBM",
     type: "ibmExperienceType",
     position: "ibmExperienceTitle",
@@ -23,7 +30,7 @@ const experiences: Experiences[] = [
 ];
 ---
     {experiences.map((experience) => 
-        <div class="grid gap-2 md:grid-cols-1 max-w-2xl w-full mb-6">
+        <div class="grid gap-2 md:grid-cols-1 max-w-4xl w-full mb-6">
             <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">
                 <Translate textKey={experience.position} fallback={experience.position} client:load />
             </h3>

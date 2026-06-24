@@ -53,7 +53,7 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="px-3 py-2 rounded bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors ml-auto"
+      className="px-3 py-2 rounded bg-white/70 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/10 text-neutral-700 dark:text-neutral-200 hover:bg-white/90 dark:hover:bg-white/20 transition-colors ml-auto"
       aria-label="Toggle theme"
     >
       {isDark ? sunSVG : moonSVG}
