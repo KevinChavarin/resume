@@ -3,13 +3,13 @@
 FROM node:lts-alpine
 
 # Install pnpm and serve globally
-RUN npm install -g pnpm serve
+RUN npm install -g pnpm@11 serve
 
 # Create and change to the app directory.
 WORKDIR /app
 
-# Copy package files first for better caching
-COPY package.json pnpm-lock.yaml ./
+# Copy config and package files first for better caching
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install ALL dependencies (including dev)
 RUN pnpm install --frozen-lockfile
